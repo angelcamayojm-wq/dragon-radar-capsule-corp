@@ -1,6 +1,11 @@
 <div align="center">
 
 # 🐉 CAPSULE CORP - DRAGON RADAR HUB ⚡
+
+### ⚡ *"¡Encuentra las 7 Esferas del Dragón en Tiempo Real!"* ⚡
+
+---
+
 ### 🚀 ⚡ ¡DESPLIEGUE EN VIVO! ⚡ 🚀
 ### 🌐 **[👉 🎯 HAZ CLIC AQUÍ PARA PROBAR EL RADAR EN VIVO 🎯 👈](https://dragon-radar-capsule-corp.onrender.com/)** 🌐
 
@@ -38,10 +43,6 @@
 
 ### 🎨 ⚡ Características & Diseño
 ✨ **Interfaz Cyberpunk DBZ** | 🌌 **Autocompletado Nominatim** | 📱 **100% Responsivo**
-
----
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Goku_Dragon_Ball_character_portrait.png" width="220" alt="Goku DBZ">
 
 ---
 

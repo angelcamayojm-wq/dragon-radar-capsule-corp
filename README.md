@@ -1,15 +1,16 @@
 <!-- ===================== HEADER ===================== -->
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=220&section=header&text=DRAGON%20RADAR%20HUB&fontSize=52&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Capsule%20Corp%20%C2%B7%20Encuentra%20las%207%20Esferas%20del%20Drag%C3%B3n&descAlignY=58&descSize=18" alt="Dragon Radar Hub" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=venom&color=0:0B2A6F,100:2E86FF&height=230&section=header&text=DRAGON%20RADAR%20HUB&fontSize=54&fontColor=FFFFFF&animation=twinkling&fontAlignY=40&desc=Capsule%20Corp%20%C2%B7%20Encuentra%20las%207%20Esferas%20del%20Drag%C3%B3n&descAlignY=62&descSize=18" alt="Dragon Radar Hub" width="100%"/>
 
 <a href="https://dragon-radar-capsule-corp.onrender.com/">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=FF6B00&center=true&vCenter=true&width=560&lines=%F0%9F%90%89+Encuentra+las+7+Esferas+del+Drag%C3%B3n;%F0%9F%93%A1+Radar+GPS+en+tiempo+real;%F0%9F%8C%8D+Detector+de+Ki+conectado+a+USGS;%E2%9A%A1+Hecho+con+Django+%2B+Leaflet" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=22&duration=2500&pause=900&color=4DA3FF&center=true&vCenter=true&repeat=true&width=620&height=50&lines=Encuentra+las+7+Esferas+del+Drag%C3%B3n;Radar+GPS+en+tiempo+real;Detector+de+Ki+conectado+a+USGS;Hecho+con+Django+%2B+Leaflet;%C2%A1Final+Flash!" alt="Typing SVG" />
 </a>
 
 <br>
 
-<img src="https://media.giphy.com/media/ul1omBLfJknUGa77ip/giphy.gif" width="360" alt="Dragon Radar GIF">
+<!-- GIF TEMPORAL: reemplaza el enlace de src por el de tu GIF de Vegeta -->
+<img src="https://media.giphy.com/media/13fTar4VVaFlG8/giphy.gif" width="380" alt="Vegeta - Dragon Ball Z">
 
 <br><br>
 
@@ -101,6 +102,50 @@
 
 </div>
 
+---
+
+## 💻 Instalación local
+
+<details>
+<summary><b>👉 Haz clic para ver los pasos</b></summary>
+
+<br>
+
+**1. Clona el repositorio**
+
+```bash
+git clone https://github.com/angelcamayojm-wq/TU-REPOSITORIO.git
+cd TU-REPOSITORIO
+```
+
+**2. Crea y activa un entorno virtual**
+
+```bash
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Linux / macOS
+source venv/bin/activate
+```
+
+**3. Instala las dependencias**
+
+```bash
+pip install -r requirements.txt
+```
+
+**4. Aplica las migraciones y arranca el servidor**
+
+```bash
+python manage.py migrate
+python manage.py runserver
+```
+
+**5. Abre en el navegador** 👉 `http://127.0.0.1:8000/`
+
+</details>
 
 ---
 
@@ -134,4 +179,4 @@
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer" alt="footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B2A6F,100:2E86FF&height=120&section=footer" alt="footer" width="100%"/>

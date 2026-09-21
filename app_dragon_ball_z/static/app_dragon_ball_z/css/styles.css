@@ -1,0 +1,367 @@
+:root {
+  --orange-dragon: #ff7700;
+  --yellow-dragon: #ffcc00;
+  --green-radar: #00ff66;
+  --card-bg: rgba(10, 15, 28, 0.90);
+  --blue-capsule: #00d2ff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background-color: #050a14;
+  overflow-x: hidden;
+}
+
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2;
+  object-fit: cover;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 10, 20, 0.82);
+  z-index: -1;
+}
+
+/* BANNER SUPERIOR PREMIUM */
+.banner-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 15, 28, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--orange-dragon);
+  padding: 12px 25px;
+  box-shadow: 0 4px 20px rgba(255, 119, 0, 0.25);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* AVATAR / ÍCONO CIRCULAR CON IMAGEN MAJIN BUU */
+.banner-logo-img {
+  position: relative;
+  width: 55px;
+  height: 55px;
+}
+
+.logo-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ff44aa;
+  box-shadow: 0 0 12px #ff44aa, 0 0 20px var(--orange-dragon);
+  transition: transform 0.3s ease;
+}
+
+.logo-avatar:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.banner-title h1 {
+  font-size: 1.35rem;
+  color: var(--yellow-dragon);
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255, 187, 0, 0.6);
+}
+
+.banner-title p {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  margin: 3px 0 0 0;
+}
+
+/* INSIGNIA DE ESTADO DEL SISTEMA */
+.status-pill {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid #22c55e;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+  animation: pulseStatus 2s infinite;
+}
+
+@keyframes pulseStatus {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* BANNER DERECHA / DEV INFO */
+.banner-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.user-badge {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid var(--orange-dragon);
+  color: #f8fafc;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.location-badge {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.github-link {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #38bdf8 !important;
+  border: 1px solid #0ea5e9;
+  padding: 6px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.82rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+}
+
+.github-link:hover {
+  background: var(--orange-dragon);
+  color: #000 !important;
+  border-color: var(--yellow-dragon);
+  box-shadow: 0 0 15px var(--orange-dragon);
+  transform: translateY(-2px);
+}
+
+.user-badge {
+  background: rgba(255, 119, 0, 0.15);
+  border: 1px solid var(--orange-dragon);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--yellow-dragon);
+}
+
+.github-link {
+  color: #fff;
+  text-decoration: none;
+  background: #1e293b;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--blue-capsule);
+  font-size: 0.85rem;
+}
+
+.nav-bar {
+  background: #080c18;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.tab-btn {
+  background: #141e33;
+  border: 1px solid #2d3748;
+  color: #e2e8f0;
+  padding: 9px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.88rem;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: linear-gradient(45deg, var(--orange-dragon), var(--yellow-dragon));
+  color: #000;
+  border-color: var(--yellow-dragon);
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.5);
+}
+
+.main-content {
+  padding: 20px;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.radar-grid-3col {
+  display: grid;
+  grid-template-columns: 320px 1fr 300px;
+  gap: 20px;
+  align-items: start;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 119, 0, 0.35);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+}
+
+/* MARCO DEL RADAR FIDELIDAD 100% ÁNIME */
+.radar-bg-container {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  border-radius: 15px;
+  background-color: rgba(10, 15, 28, 0.95);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--orange-dragon);
+  box-shadow: 0 0 20px rgba(255, 119, 0, 0.3);
+}
+
+.radar-wrapper {
+  position: relative;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Botón Superior metálico con perilla */
+.radar-top-btn {
+  width: 80px;
+  height: 35px;
+  background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+  border: 4px solid #334155;
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.5);
+}
+
+/* Cuerpo circular metallic doble marco */
+.radar-frame {
+  width: 410px;
+  height: 410px;
+  background: #002b00;
+  border: 14px solid #cbd5e1;
+  outline: 6px solid #475569;
+  border-radius: 50%;
+  box-shadow: inset 0 0 25px rgba(0,0,0,0.9), 0 0 35px var(--green-radar);
+  overflow: hidden;
+  position: relative;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Rejilla Verde de Líneas */
+.radar-grid-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  background: 
+      repeating-linear-gradient(0deg, rgba(0, 255, 102, 0.22) 0px, rgba(0, 255, 102, 0.22) 1px, transparent 1px, transparent 22px),
+      repeating-linear-gradient(90deg, rgba(0, 255, 102, 0.22) 0px, rgba(0, 255, 102, 0.22) 1px, transparent 1px, transparent 22px);
+  border-radius: 50%;
+}
+
+/* Botón Inferior pequeño del radar */
+.radar-bottom-btn {
+  width: 50px;
+  height: 12px;
+  background: #94a3b8;
+  border: 3px solid #334155;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 0.85rem; color: var(--yellow-dragon); margin-bottom: 5px; }
+.input-group input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--blue-capsule); background: #141e33; color: #fff; box-sizing: border-box; }
+
+.stat-box { background: rgba(15, 23, 42, 0.8); border: 1px solid var(--blue-capsule); padding: 12px; border-radius: 8px; margin-bottom: 12px; }
+.stat-box h4 { margin: 0 0 5px 0; color: var(--blue-capsule); font-size: 0.85rem; }
+.stat-box p { margin: 0; font-size: 1.2rem; font-weight: bold; }
+
+video, audio, iframe { width: 100%; border-radius: 8px; }
+iframe { height: 450px; border: 1px solid var(--orange-dragon); }
+
+/* ESTILOS PARA LA LISTA DESPLEGABLE DE SUGERENCIAS (AUTOCOMPLETADO) */
+.awesomplete {
+  display: block;
+  position: relative;
+}
+
+.awesomplete > ul {
+  background: #141e33 !important;
+  border: 1px solid var(--blue-capsule) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8) !important;
+  color: #fff !important;
+  margin-top: 5px !important;
+  padding: 0 !important;
+  list-style: none !important;
+  position: absolute !important;
+  z-index: 9999 !important;
+  width: 100% !important;
+  max-height: 200px !important;
+  overflow-y: auto !important;
+}
+
+.awesomplete > ul > li {
+  padding: 10px 14px !important;
+  cursor: pointer !important;
+  border-bottom: 1px solid #1e293b !important;
+  font-size: 0.85rem !important;
+  transition: 0.2s !important;
+}
+
+.awesomplete > ul > li:hover,
+.awesomplete > ul > li[aria-selected="true"] {
+  background: var(--orange-dragon) !important;
+  color: #000 !important;
+  font-weight: bold !important;
+}
+
+.awesomplete mark {
+  background: transparent !important;
+  color: var(--yellow-dragon) !important;
+  font-weight: bold !important;
+}
+
+/* EFECTO HOVER EN TARJETAS DE SISMOS */
+.sismo-card-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 119, 0, 0.5) !important;
+  border-color: var(--yellow-dragon) !important;
+}

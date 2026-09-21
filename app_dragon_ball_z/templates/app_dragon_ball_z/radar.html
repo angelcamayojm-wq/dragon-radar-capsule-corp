@@ -1,0 +1,357 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capsule Corp - Dragon Radar</title>
+
+    <!-- Leaflet & Routing Machine CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    
+    <!-- Librería de Autocompletado de Direcciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.css" />
+
+    <!-- CSS Estático del Proyecto -->
+    <link rel="stylesheet" href="{% static 'app_dragon_ball_z/css/styles.css' %}" />
+</head>
+<body>
+
+    <!-- Video de Fondo Principal -->
+    <video autoplay muted loop id="bg-video">
+        <source src="{{ fondo_video }}" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <!-- BANNER SUPERIOR PRO  -->
+    <div class="banner-top">
+        <div class="banner-left">
+            <!-- Ícono con la imagen icono.jpg y efecto Neón -->
+            <div class="banner-logo-img">
+                <img src="/media/icono.jpg" alt="Majin Buu Icon" class="logo-avatar">
+            </div>
+            
+            <div class="banner-title">
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <h1>CAPSULE CORP - RADAR SYSTEM</h1>
+                    <span class="status-pill">● SISTEMA ACTIVO</span>
+                </div>
+                <p>🐉 Centro Telemétrico de Navegación, Monitoreo de Ki y Detección de Esferas del Dragón</p>
+            </div>
+        </div>
+
+        <div class="banner-user">
+            <div class="user-info-box">
+                <span class="user-badge">👨‍💻 Dev: Angel Esteban Rivera Camayo</span>
+                <span class="location-badge">📍 Popayán, Cauca</span>
+            </div>
+            <a href="https://github.com/angelcamayojm-wq" target="_blank" class="github-link">
+                🐙 Mi GitHub ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- BARRA DE NAVEGACIÓN (TABS) -->
+    <div class="nav-bar">
+        <button class="tab-btn active" onclick="openTab('radar')">🗺️ RADAR DRAGÓN</button>
+        <button class="tab-btn" onclick="openTab('multimedia')">🎬 MULTIMEDIA</button>
+        <button class="tab-btn" onclick="openTab('pdf')">📄 MANUAL CAPSULE</button>
+        <button class="tab-btn" onclick="openTab('ki')">🌍 DETECTOR DE KI</button>
+    </div>
+
+    <div class="main-content">
+        <!-- PESTAÑA 1: RADAR MAPA INTERACTIVO (3 COLUMNAS) -->
+        <div id="radar" class="tab-content active">
+            <div class="radar-grid-3col">
+                
+                <!-- COLUMNA 1: CONTROLES DE NAVEGACIÓN -->
+                <div class="card">
+                    <h3 style="color: var(--yellow-dragon); margin-top: 0;">🧭 Navegación</h3>
+                    
+                    <div class="input-group">
+                        <label for="origen-input">Punto de Partida (Origen):</label>
+                        <input type="text" id="origen-input" class="awesomplete" value="Popayán, Centro" placeholder="Escribe origen..." autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="destino-input">Destino (Esfera del Dragón):</label>
+                        <input type="text" id="destino-input" class="awesomplete" value="Calle 13, Popayán" placeholder="Escribe destino..." autocomplete="off">
+                    </div>
+
+                    <button class="tab-btn" onclick="buscarYRecalcular()" style="width: 100%; margin-top: 10px;">🚀 Recalcular Ruta</button>
+
+                    <div style="margin-top: 20px; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">
+                        💡 <b>Tip:</b> Selecciona una sugerencia de la lista o arrastra las esferas dentro del radar para cambiar la ruta en tiempo real.
+                    </div>
+                </div>
+
+                <!-- COLUMNA 2: RADAR CON LA IMAGEN DE SHENLONG DETRÁS -->
+                <div class="radar-bg-container" style="background-image: url('/media/fondo%20radar.webp');">
+                    <div class="radar-wrapper">
+                        <div class="radar-top-btn"></div>
+                        <div class="radar-frame">
+                            <div class="radar-grid-overlay"></div>
+                            <div id="map"></div>
+                        </div>
+                        <div class="radar-bottom-btn"></div>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 3: TELEMETRÍA Y DATOS EN VIVO -->
+                <div class="card">
+                    <h3 style="color: var(--yellow-dragon); margin-top: 0;">📊 Telemetría</h3>
+                    
+                    <div class="stat-box">
+                        <h4>📏 Distancia Total:</h4>
+                        <p id="stat-distancia">Calculando...</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h4>⏱️ Tiempo Estimado:</h4>
+                        <p id="stat-tiempo">Calculando...</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h4>🚗 Estado del Tráfico:</h4>
+                        <p id="stat-trafico">Analizando...</p>
+                    </div>
+
+                    <div class="stat-box" style="border-color: var(--green-radar);">
+                        <h4>⚡ Rastreo de Ki:</h4>
+                        <p style="color: var(--green-radar);">Señal Estable</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PESTAÑA 2: MULTIMEDIA -->
+        <div id="multimedia" class="tab-content">
+            <div class="card">
+                <h2 style="color: var(--yellow-dragon); margin-top: 0;">🎬 Video Local</h2>
+                <video controls style="max-height: 400px;">
+                    <source src="{{ video_url }}" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <h2 style="color: var(--yellow-dragon); margin-top: 25px;">🔊 Audio Local</h2>
+                <audio controls>
+                    <source src="{{ audio_url }}" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 3: VISOR DE PDF INTERACTIVO (PDF.JS + PANTALLA COMPLETA) -->
+        <div id="pdf" class="tab-content">
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                    <h2 style="color: var(--yellow-dragon); margin: 0;">📄 Visor de Documentos Capsule Corp</h2>
+                    
+                    <!-- Botón para Cargar PDF Local -->
+                    <div>
+                        <label for="pdf-file-input" class="tab-btn" style="cursor: pointer; display: inline-block;">
+                            📂 Cargar PDF Local
+                        </label>
+                        <input type="file" id="pdf-file-input" accept="application/pdf" style="display: none;" onchange="cargarPdfLocal(event)">
+                    </div>
+                </div>
+
+                <!-- Contenedor del Canvas de Lectura de PDF -->
+                <div id="pdf-canvas-container" style="width: 100%; height: 520px; overflow-y: auto; text-align: center; background: #1a233a; border: 1px solid var(--orange-dragon); border-radius: 8px; padding: 15px 0;">
+                    <canvas id="pdf-render"></canvas>
+                </div>
+
+                <!-- Controles de Navegación del PDF y Pantalla Completa -->
+                <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                    <button class="tab-btn" id="prev-page" type="button">◀ Anterior</button>
+                    <span style="font-weight: bold; color: var(--yellow-dragon);">Página: <span id="page-num">1</span> / <span id="page-count">--</span></span>
+                    <button class="tab-btn" id="next-page" type="button">Siguiente ▶</button>
+                    <button class="tab-btn" onclick="togglePantallaCompleta()" type="button" style="border-color: var(--blue-capsule);">⛶ Pantalla Completa</button>
+                </div>
+
+                <!-- Botón de Descarga Directa -->
+                <a id="pdf-download-btn" href="{{ pdf_url }}" download style="text-decoration: none;">
+                    <button class="tab-btn" type="button" style="margin-top: 15px; width: 100%;">📥 Descargar Documento PDF</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 4: DETECTOR DE KI (MONITOREO SÍSMICO) -->
+        <div id="ki" class="tab-content">
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px; flex-wrap: wrap;">
+                    <!-- GIF Animado de Radar / Energía -->
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z0bnZ4NW8ydDVwZmRydm94NW9mdmt3Z2FqdWhvaGF0MG01NmppZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/l41K3o5mjg05y594c/giphy.gif" alt="Radar GIF" style="width: 45px; height: 45px; filter: drop-shadow(0 0 8px var(--orange-dragon));">
+                    <div>
+                        <h2 style="color: var(--yellow-dragon); margin: 0; font-size: 1.4rem;">
+                            🌍 Monitoreo Sísmico & Rastreo de Ki en Tiempo Real
+                        </h2>
+                        <p style="color: #cbd5e1; font-size: 0.85rem; margin-top: 4px;">
+                            📡 Rastreando perturbaciones tectónicas alrededor de la Tierra (USGS).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Grilla de Tarjetas de Sismos -->
+                <div id="sismos-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; margin-top: 15px;">
+                    <div style="color: var(--yellow-dragon); font-weight: bold;">⚡ Rastreando señales telemétricas...</div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL DETALLE DE SISMO -->
+        <div id="sismo-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 10000; justify-content: center; align-items: center; padding: 20px;">
+            <div style="background: #0f172a; border: 2px solid var(--orange-dragon); border-radius: 12px; padding: 25px; max-width: 500px; width: 100%; box-shadow: 0 0 25px rgba(255,119,0,0.5); position: relative;">
+                <button onclick="cerrarModalSismo()" style="position: absolute; top: 10px; right: 15px; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;">✖</button>
+                
+                <h3 style="color: var(--yellow-dragon); margin-top: 0; border-bottom: 1px solid var(--orange-dragon); padding-bottom: 10px;">
+                    ⚡ Detalle del Evento Telúrico
+                </h3>
+
+                <div id="modal-contenido" style="line-height: 1.8; font-size: 0.95rem; color: #e2e8f0;">
+                    <!-- Se llena dinámicamente -->
+                </div>
+
+                <button class="tab-btn" onclick="cerrarModalSismo()" style="width: 100%; margin-top: 20px;">
+                    Entendido / Cerrar
+                </button>
+            </div>
+        </div>
+
+    <!-- Scripts de Librerías -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.js"></script>
+    
+    <!-- Librería PDF.js de Mozilla -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+    <!-- JS Estático del Proyecto -->
+    <script src="{% static 'app_dragon_ball_z/js/radar_mapa.js' %}"></script>
+
+    <!-- Script de Control de Pestañas (Tabs) -->
+    <script>
+        function openTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            }
+
+            if (tabId === 'radar' && window.invalidateMapSize) {
+                window.invalidateMapSize();
+            }
+        }
+    </script>
+
+    <!-- Script de Configuración del Visor PDF.js y Pantalla Completa -->
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+        var pdfDoc = null,
+            pageNum = 1,
+            pageRendering = false,
+            pageNumPending = null,
+            scale = 1.1,
+            canvas = document.getElementById('pdf-render'),
+            ctx = canvas.getContext('2d');
+
+        function renderPage(num) {
+            pageRendering = true;
+            pdfDoc.getPage(num).then(function(page) {
+                var viewport = page.getViewport({scale: scale});
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                var renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                var renderTask = page.render(renderContext);
+
+                renderTask.promise.then(function() {
+                    pageRendering = false;
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                });
+            });
+
+            document.getElementById('page-num').textContent = num;
+        }
+
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
+            }
+        }
+
+        document.getElementById('prev-page').addEventListener('click', function() {
+            if (pageNum <= 1) return;
+            pageNum--;
+            queueRenderPage(pageNum);
+        });
+
+        document.getElementById('next-page').addEventListener('click', function() {
+            if (pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            queueRenderPage(pageNum);
+        });
+
+        // Cargar el PDF predeterminado desde la carpeta media de Django
+        pdfjsLib.getDocument('{{ pdf_url }}').promise.then(function(pdfDoc_) {
+            pdfDoc = pdfDoc_;
+            document.getElementById('page-count').textContent = pdfDoc.numPages;
+            renderPage(pageNum);
+        }).catch(function(err) {
+            console.log("Esperando archivo PDF local o selección manual...", err);
+        });
+
+        // Cargar un archivo PDF local desde el computador
+        function cargarPdfLocal(event) {
+            var file = event.target.files[0];
+            if (file && file.type === "application/pdf") {
+                var fileURL = URL.createObjectURL(file);
+                
+                pdfjsLib.getDocument(fileURL).promise.then(function(pdfDoc_) {
+                    pdfDoc = pdfDoc_;
+                    pageNum = 1;
+                    document.getElementById('page-count').textContent = pdfDoc.numPages;
+                    renderPage(pageNum);
+                    
+                    var downloadBtn = document.getElementById('pdf-download-btn');
+                    downloadBtn.href = fileURL;
+                    downloadBtn.setAttribute('download', file.name);
+                });
+            } else {
+                alert("Por favor selecciona un archivo PDF válido.");
+            }
+        }
+
+        // Función para Activar/Desactivar Pantalla Completa
+        function togglePantallaCompleta() {
+            var elem = document.getElementById('pdf-canvas-container');
+            if (!elem) return;
+
+            if (!document.fullscreenElement) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) { /* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE11 */
+                    elem.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

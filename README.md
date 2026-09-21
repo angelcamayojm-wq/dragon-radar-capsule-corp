@@ -44,3 +44,4 @@ Un radar interactivo de **Capsule Corp** desarrollado con **Django** que localiz
 | 📦 **WhiteNoise** | Gestión de archivos estáticos en producción |
 
 ---
+

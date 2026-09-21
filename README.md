@@ -1,52 +1,46 @@
-# 🐉 Capsule Corp - Dragon Radar System ⚡
+# 🐉 Radar Dragon Ball Z - Capsule Corp 🎯
 
-![Capsule Corp Banner](https://img.shields.io/badge/CAPSULE_CORP-RADAR_SYSTEM_v2.5-orange?style=for-the-badge&logo=dragonball)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Leaflet](https://img.shields.io/badge/Leaflet-199900?style=for-the-badge&logo=Leaflet&logoColor=white)
-![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
+<div align="center">
 
-> **Aplicación Web Telemétrica e Interactiva** desarrollada con **Django** y **Leaflet.js**, ambientada en la temática futurista de **Dragon Ball Z / Capsule Corp**. Incluye trazado de rutas en tiempo real, autocompletado de direcciones para Popayán, detector de ki/sismos global (USGS API), centro multimedia y un visor de documentos PDF interactivo.
+![Dragon Ball Banner](https://raw.githubusercontent.com/andreasbm/readme-icons/master/badges/dragon.svg)
 
----
+  ### 🌐 **[¡Haz clic aquí para ver el Radar en Vivo!](https://dragon-radar-capsule-corp.onrender.com/)** 🚀
 
-## 🌐 Demo en Vivo
-
-🚀 **Prueba la aplicación desplegada en Render:**  
-👉 [https://dragon-radar-capsule-corp.onrender.com](https://dragon-radar-capsule-corp.onrender.com)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-5.0+-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?style=for-the-badge&logo=render&logoColor=black)](https://render.com/)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)](https://dragon-radar-capsule-corp.onrender.com/)
 
 ---
 
-## ⚡ Características Principales
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHI1OWxoaTN2OGY5OHUyd2UyaDRicjBicW00ZnYwOHFzbnByYjFiOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ul1omBLfJknUGa77ip/giphy.gif" width="400" alt="Dragon Radar GIF">
 
-### 🗺️ 1. Radar del Dragón (Mapa Interactivo & Rutas)
-* **Trazado de Rutas en Tiempo Real:** Integración con **Leaflet** y **Leaflet Routing Machine** para calcular distancia (km) y tiempo estimado de viaje.
-* **Autocompletado de Direcciones:** Búsqueda predictiva con **Awesomplete** conectada a la API de **Nominatim (OpenStreetMap)** optimizada para **Popayán, Cauca, Colombia**.
-* **Esferas del Dragón Dinámicas:** Generación de marcadores personalizados con esferas de 1 a 7 estrellas de forma aleatoria al recalcular rutas o arrastrar marcadores.
+</div>
 
-### 🎬 2. Centro Multimedia Capsule Corp
-* Reproductor personalizado para contenido audiovisual local en formatos MP4 y MP3.
+---
 
-### 📄 3. Visor de Documentos (PDF.js)
-* **Lector Nativo en Canvas:** Implementación del motor oficial de Mozilla **PDF.js** para renderizar documentos sin bloqueos de navegador.
-* **Carga Local de Archivos:** Permite al usuario cargar cualquier archivo PDF desde su computador para leerlo al instante.
-* **Modo Pantalla Completa & Navegación:** Botones para cambiar de página y vista expandida en pantalla completa (`Fullscreen API`).
+## ⚡ ¿Qué es este proyecto?
 
-### 🌍 4. Detector de Ki (Monitoreo Sísmico en Tiempo Real)
-* **Consumo de API de la USGS:** Rastreos tectónicos globales actualizados al minuto.
-* **Diseño en Tarjetas & Traducido al Español:** Indicadores con insignias de colores (Verde, Amarillo, Rojo) y emojis según la magnitud.
-* **Ficha Técnica Flotante (Modal):** Información detallada sobre profundidad, coordenadas, horario y alertas de tsunami al hacer clic.
+Un radar interactivo de **Capsule Corp** desarrollado con **Django** que localiza en tiempo real las 7 Esferas del Dragón. 📍✨
+
+---
+
+## ✨ Características Principales
+
+* 🟢 **Interfaz Futurista:** Diseño inspirado en el radar clásico de Bulma.
+* 📍 **Rastreo en Vivo:** Mapa interactivo con la ubicación de las esferas.
+* ⚡ **Despliegue Continuo:** Alojado y corriendo en **Render**.
+* 📱 **Diseño Responsive:** Adaptado para PC y dispositivos móviles.
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
-* **Backend:** Python 3.10+, Django 5.x, Gunicorn.
-* **Frontend:** HTML5, CSS3 (Efectos Neón, Flexbox, CSS Grid), JavaScript (ES6+).
-* **Mapeo & Geolocalización:** Leaflet.js, Leaflet Routing Machine, OpenStreetMap / CartoDB.
-* **Visor de PDF:** PDF.js (Mozilla).
-* **Autocompletado:** Awesomplete.js.
-* **APIs Externas:** Nominatim OpenStreetMap API, USGS Earthquake Hazards Program API.
-* **Despliegue:** Render.
+| Tecnología | Uso |
+|---|---|
+| 🐍 **Python / Django** | Backend y lógica del servidor |
+| 🎨 **CSS3 / JavaScript** | Estilos interactivos y animaciones del radar |
+| ☁️ **Render** | Servidor de despliegue en la nube |
+| 📦 **WhiteNoise** | Gestión de archivos estáticos en producción |
 
 ---

@@ -85,7 +85,24 @@
 
 ---
 
+## 📸 Capturas
 
+<div align="center">
+
+<!-- Reemplaza estas rutas por tus capturas reales (por ejemplo, en una carpeta /screenshots) -->
+
+| 🗺️ Radar GPS | 🌍 Detector Ki |
+| :---: | :---: |
+| <img src="screenshots/radar.png" width="420" alt="Radar GPS"> | <img src="screenshots/detector-ki.png" width="420" alt="Detector Ki"> |
+
+| 🎬 Media Hub | 📑 Visor PDF |
+| :---: | :---: |
+| <img src="screenshots/media-hub.png" width="420" alt="Media Hub"> | <img src="screenshots/visor-pdf.png" width="420" alt="Visor PDF"> |
+
+</div>
+
+
+---
 
 ## 🗺️ Roadmap
 

@@ -4,7 +4,11 @@
 
 ### ⚡ *"¡Encuentra las 7 Esferas del Dragón en Tiempo Real!"* ⚡
 
----
+<br>
+
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHI1OWxoaTN2OGY5OHUyd2UyaDRicjBicW00ZnYwOHFzbnByYjFiOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ul1omBLfJknUGa77ip/giphy.gif" width="380" alt="Dragon Radar GIF">
+
+<br><br>
 
 ### 🚀 ⚡ ¡DESPLIEGUE EN VIVO! ⚡ 🚀
 ### 🌐 **[👉 🎯 HAZ CLIC AQUÍ PARA PROBAR EL RADAR EN VIVO 🎯 👈](https://dragon-radar-capsule-corp.onrender.com/)** 🌐

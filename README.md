@@ -2,8 +2,6 @@
 
 <div align="center">
 
-![Dragon Ball Banner](https://raw.githubusercontent.com/andreasbm/readme-icons/master/badges/dragon.svg)
-
   ### 🌐 **[¡Haz clic aquí para ver el Radar en Vivo!](https://dragon-radar-capsule-corp.onrender.com/)** 🚀
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
@@ -13,19 +11,19 @@
 
 ---
 
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHI1OWxoaTN2OGY5OHUyd2UyaDRicjBicW00ZnYwOHFzbnByYjFiOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ul1omBLfJknUGa77ip/giphy.gif" width="400" alt="Dragon Radar GIF">
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3h5cWg5dWtsM21ndTFydG9mdTJsdW5xNnJrdzVndDF6azRrc242eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8oX443ptI9Gf2IypT7/giphy.gif" width="350" alt="Majin Buu GIF">
 
 </div>
 
 ---
 
-## ⚡ ¿Qué es este proyecto?
+## ⚡ ¿Qué es este proyecto? 💥
 
 Un radar interactivo de **Capsule Corp** desarrollado con **Django** que localiza en tiempo real las 7 Esferas del Dragón. 📍✨
 
 ---
 
-## ✨ Características Principales
+## ✨ Características Principales 😈
 
 * 🟢 **Interfaz Futurista:** Diseño inspirado en el radar clásico de Bulma.
 * 📍 **Rastreo en Vivo:** Mapa interactivo con la ubicación de las esferas.
@@ -34,7 +32,7 @@ Un radar interactivo de **Capsule Corp** desarrollado con **Django** que localiz
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías Utilizadas 🧪
 
 | Tecnología | Uso |
 |---|---|
@@ -45,3 +43,6 @@ Un radar interactivo de **Capsule Corp** desarrollado con **Django** que localiz
 
 ---
 
+
+# 4. Inicia el servidor
+python manage.py runserver

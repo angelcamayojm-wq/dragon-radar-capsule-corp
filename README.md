@@ -1,13 +1,6 @@
 <div align="center">
 
-![Dragon Ball Banner](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHI1OWxoaTN2OGY5OHUyd2UyaDRicjBicW00ZnYwOHFzbnByYjFiOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ul1omBLfJknUGa77ip/giphy.gif)
-
 # 🐉 CAPSULE CORP - DRAGON RADAR HUB ⚡
-
-### ⚡ *"¡Encuentra las 7 Esferas del Dragón en Tiempo Real!"* ⚡
-
----
-
 ### 🚀 ⚡ ¡DESPLIEGUE EN VIVO! ⚡ 🚀
 ### 🌐 **[👉 🎯 HAZ CLIC AQUÍ PARA PROBAR EL RADAR EN VIVO 🎯 👈](https://dragon-radar-capsule-corp.onrender.com/)** 🌐
 
@@ -48,7 +41,7 @@
 
 ---
 
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnIxNWg2cnpsOHdkeWtyeWZ4b2g3ZmRzcnl4OWs0eHk5OGc4dHRiNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v9G3NGByE9x16/giphy.gif" width="300" alt="Majin Buu DBZ">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Goku_Dragon_Ball_character_portrait.png" width="220" alt="Goku DBZ">
 
 ---
 

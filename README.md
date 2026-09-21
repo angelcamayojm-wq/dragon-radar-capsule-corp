@@ -1,49 +1,29 @@
 <div align="center">
 
-# 🐉 RADAR DRAGON BALL Z 💥
-### 🏢 CAPSULE CORP - SYSTEM ⚡
+# 🐉 CAPSULE CORP - RADAR SYSTEM v2.5 ⚡
+
+![Capsule Corp Banner](https://img.shields.io/badge/CAPSULE_CORP-RADAR_SYSTEM_v2.5-FF6B00?style=for-the-badge&logo=dragonball&logoColor=white)
 
 <br>
 
-<img src="https://c.tenor.com/2oEToAThzK0AAAAC/majin-buu-dragon-ball.gif" width="280" alt="Majin Buu">
-
-<br><br>
-
-[![App en Vivo](https://img.shields.io/badge/🌐_PROBAR_RADAR_EN_VIVO-CLICK_AQUÍ-FF6B00?style=for-the-badge&logoColor=white)](https://dragon-radar-capsule-corp.onrender.com/)
+### 🌐 **[👉 PROBAR RADAR EN VIVO AQUÍ 👈](https://dragon-radar-capsule-corp.onrender.com/)** 🚀
 
 <br>
 
-![Python](https://img.shields.io/badge/🐍_Python-3.10-blue?style=for-the-badge)
-![Django](https://img.shields.io/badge/🎯_Django-5.0-green?style=for-the-badge)
-![Render](https://img.shields.io/badge/☁️_Render-Live-black?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
 
 </div>
 
 ---
 
-### ⚡ FEATURES 😈
+## ⚡ CARACTERÍSTICAS DEL SISTEMA 💥
 
-* 🟢 **Radar Interactivo:** Rastreo de las 7 esferas 📍
-* 🔊 **Audio & Efectos:** Sonidos de Dragon Ball Z 🎶
-* 🗺️ **Mapa GPS:** Ubicaciones en tiempo real 🌍
-* 📱 **100% Mobile:** Compatible con celulares 📲
-
----
-
-### 🛠️ TECH STACK 🧪
-
-| 🚀 Tech | ⚙️ Función |
-| :---: | :--- |
-| 🐍 **Python / Django** | Backend & Lógica |
-| 🎨 **CSS / JS / Leaflet** | Mapa Radar & Animaciones |
-| ☁️ **Render & WhiteNoise** | Hosting & Estáticos |
-
----
-
-### 💻 LOCAL RUN 🚀
-
-```bash
-git clone [https://github.com/angelcamayojm-wq/dragon-radar-capsule-corp.git](https://github.com/angelcamayojm-wq/dragon-radar-capsule-corp.git)
-cd dragon-radar-capsule-corp
-pip install -r requirements.txt
-python manage.py runserver
+```text
+ 📡 RADAR GPS       ➔ Detección de Esferas del Dragón en tiempo real 📍
+ 🗺️ RUTAS OPTIMIZADAS➔ Trazado de mapas dinámicos en Popayán 🚗
+ 🔊 AUDIO SYSTEM    ➔ Reproductor multimedia de efectos DBZ 🎶
+ 📄 VISOR PDF       ➔ Lector de documentos nativo con PDF.js 📑
+ 🌍 MONITOREO KI    ➔ Detector sísmico global conectado a la USGS 🌋
